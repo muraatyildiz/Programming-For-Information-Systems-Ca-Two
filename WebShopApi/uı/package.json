@@ -1,0 +1,27 @@
+{
+  "name": "WebShopUI",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "core-js": "^3.25.3",
+    "cors": "^2.8.5",
+    "jquery": "^3.6.0",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-moment": "^4.1.0",
+    "vue-resource": "^1.5.1",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vuetify": "^2.6.10"
+  },
+  "devDependencies": {
+    "@nuxtjs/moment": "^1.6.1",
+    "@nuxtjs/vuetify": "^1.12.3"
+  }
+}
