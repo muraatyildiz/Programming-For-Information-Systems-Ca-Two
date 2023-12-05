@@ -14,9 +14,7 @@ from fileUpload import fileUpload_api
 
 
 app = Flask(__name__)
-app.config['UPLOAD_DIRECTORY'] = 'uploads/'
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 # 16MB
-app.config['ALLOWED_EXTENSIONS'] = ['.jpg', '.jpeg', '.png', '.gif']
+
 # app.register_blueprint()
 # app.register_blueprint(fileUpload_api)
 app.register_blueprint(product_api, url_prefix='/product/')
