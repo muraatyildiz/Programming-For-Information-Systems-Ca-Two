@@ -1,0 +1,56 @@
+.detailProduct {
+    width: 100%;
+    height: 100%;
+    margin-top: -50px;
+}
+
+.detailVideo {
+    width: 100%;
+    height: 100%;
+    margin-top: -100px;
+}
+
+.fa {
+    font-size: 25px;
+}
+
+.detailPrice{
+    font-size: 22px;
+}
+
+.checked {
+    color: orange;
+}
+
+.productNav{
+    font-size: .85em;
+    margin: 0 0 0.5em;
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 0;
+    padding: 0;    
+}
+
+.productNav a{
+    color: #61b0e0;
+    text-decoration: none;
+}
+
+.detailContent {
+    min-height: calc(100vh - 50px);
+ }
+
+ /* Here, some changes that need to be made on the mobile screen are made with CSS. */
+@media screen and (max-width: 1199px) { 
+    .detailVideo {
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .detailProduct {
+        margin-top: -10px;
+    }
+}

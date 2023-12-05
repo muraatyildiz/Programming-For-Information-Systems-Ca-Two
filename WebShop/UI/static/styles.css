@@ -1,0 +1,264 @@
+.productCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    max-height: 600px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.productNameCard {
+    color: #000000;
+}
+
+.productPrice {
+    color: grey;
+    font-size: 22px;
+}
+
+.reservationButton {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #38a4e5;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.reservationButton:hover {
+    opacity: 0.7;
+}
+
+.productCard a:link {
+    text-decoration: none;
+}
+
+/* when we hover to the product card some changes are happening */
+.productCard:hover {
+    transform: translate3D(0, 1px, 0) scale(1.04);
+}
+
+/* This allows the product description that we show in the product card to be displayed on a maximum of three lines. */
+.productDescription {
+    font-size: 13px;
+    color: #111;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.logo {
+    padding: 8px;
+    color: white;
+    display: inline-block;
+    height: 70px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.logoFooter {
+    padding: 18px;
+    color: white;
+    display: inline-block;
+    height: 70px;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+    z-index: 1;
+}
+
+.topnav {
+    overflow: hidden;
+
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #38a4e5;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.search {
+    border-radius: 10px;
+
+}
+
+.mobileSearch {
+    margin-left: 15px;
+    border-radius: 10px;
+}
+
+.cartIcon {
+    color: white;
+
+}
+
+.alert {
+    /* This was done for class alert */
+    display: none;
+    padding: 20px;
+    background-color: #04AA6D;
+    color: white;
+    opacity: 1;
+    transition: opacity 2s;
+    margin-bottom: 15px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    z-index: 1;
+}
+
+.alertCloseBtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.alertCloseBtn:hover {
+    color: black;
+}
+
+.mobileSidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.mobileSidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.mobileSidebar a:hover {
+    color: #f1f1f1;
+}
+
+.mobileSidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+.banner {
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+
+}
+
+.bannerImg {
+    width: 100%;
+}
+
+.bannerContent {
+    position: absolute;
+    top: 0;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    min-height: calc(100vh - 120px);
+}
+
+.alert {
+    display: none;
+    padding: 20px;
+    background-color: #04AA6D;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s;
+    margin-bottom: 15px;
+    position: fixed;
+    top: 0;
+}
+
+.alertCloseBtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.alertCloseBtn:hover {
+    color: black;
+}
+
+.footer {
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
