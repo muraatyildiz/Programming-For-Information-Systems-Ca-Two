@@ -2,7 +2,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     max-height: 600px;
-    margin: auto;
+    margin: 5px;
     text-align: center;
     font-family: arial;
 }
@@ -21,7 +21,7 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #38a4e5;
+    background-color: #19af9f !important;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -63,17 +63,25 @@
 }
 
 .logoFooter {
-    padding: 18px;
+    padding: 10px;
     color: white;
     display: inline-block;
-    height: 70px;
+    height: 80px;
+}
+.topbarDetail{
+    position: sticky;
+    top: 0;
+    background-color: #faf3f6;
+    z-index: 1;
+    margin: 0px !important;
 }
 
 .topbar {
     position: sticky;
     top: 0;
-    background-color: #000000;
+    background-color: #faf3f6;
     z-index: 1;
+    margin: 0px !important;
 }
 
 .topnav {
@@ -81,20 +89,12 @@
 
 }
 
-.topnav a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
 
-.topnav a:hover {
+
+/* .topnav a:hover {
     background-color: #38a4e5;
-    color: black;
-}
+    color: red;
+} */
 
 .topnav a.active {
     background-color: #2196F3;
@@ -108,6 +108,16 @@
     margin-right: 16px;
     font-size: 17px;
 }
+.topnav a {
+    float: left;
+    display: block;
+    color: #444 !important ;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    
+}
 
 .search {
     border-radius: 10px;
@@ -120,7 +130,7 @@
 }
 
 .cartIcon {
-    color: white;
+    color: black;
 
 }
 
@@ -203,14 +213,17 @@
 }
 
 .banner {
+    padding: 0px !important;
     padding-left: 0px;
     padding-right: 0px;
-    position: relative;
+   
+
 
 }
 
 .bannerImg {
     width: 100%;
+    height: 350px;
 }
 
 .bannerContent {
@@ -258,7 +271,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: black;
+    background-color: #faf3f6;
     color: white;
     text-align: center;
 }

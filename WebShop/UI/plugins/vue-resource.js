@@ -1,5 +1,10 @@
 import Vue from "vue";
 import VueResource from "vue-resource";
+import VueFileAgent from 'vue-file-agent';
+import VueFileAgentStyles from 'vue-file-agent/dist/vue-file-agent.css';
+
+Vue.use(VueFileAgent);
+Vue.use(VueFileAgentStyles);
 Vue.use(VueResource);
 
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*'
