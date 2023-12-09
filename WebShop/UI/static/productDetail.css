@@ -1,7 +1,11 @@
 .detailProduct {
-    width: 100%;
-    height: 100%;
+   
     margin-top: -50px;
+}
+.detailProduct img {
+    width: 90% !important;
+    height: 90% !important;
+   
 }
 
 .detailVideo {
