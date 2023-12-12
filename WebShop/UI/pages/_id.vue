@@ -27,7 +27,7 @@
           </p>
           <hr style="border: 3px solid #f1f1f1" />
         </div>
-        <div class="mb-5 detailPrice">Price: &nbsp;€ {{ product.price }}, 00</div>
+        <div class="mb-5 detailPrice">Price: &nbsp;€ {{ product.price }},00</div>
         <p>
           <button
             id="myBtn"
