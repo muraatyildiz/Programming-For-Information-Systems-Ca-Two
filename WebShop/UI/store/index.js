@@ -18,10 +18,10 @@ export const mutations = {
 	},
 	addProductToCart(state, product) {
 		if (state.cartProducts.includes(product)) {
-			product.amount = state.cartProducts[state.cartProducts.indexOf(product)].amount + 1
+			product.quantity = state.cartProducts[state.cartProducts.indexOf(product)].quantity + 1
 			state.cartProducts[state.cartProducts.indexOf(product)]=product
 		} else {
-			product.amount = 1
+			product.quantity = 1
 			state.cartProducts.push(product);
 		}
 	},
