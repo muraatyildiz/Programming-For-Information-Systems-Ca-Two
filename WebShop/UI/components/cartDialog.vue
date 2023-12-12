@@ -8,7 +8,7 @@
     >
       <img :src="$store.state.ApiLink + 'file/serve-image/'+product.imgUrl" :alt="product.imgUrl" class="item-thumb" />
       <h3 class="item-name">{{ product.name }}</h3>
-      <span class="item-amount">Amount: {{ product.amount }}</span>
+      <span class="item-amount">Amount: {{ product.quantity }}</span>
       <span class="item-price">€ {{ product.price }}, 00</span>
     </div>
     <div class="cart-info" v-if="hasProduct()">
