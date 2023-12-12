@@ -19,7 +19,7 @@
 
             <p class="productDescription">{{ product.description }}</p>
 
-            <p class="productPrice">€ {{ product.price }}, 00</p>
+            <p class="productPrice">€ {{ product.price }},00</p>
           </nuxt-link>
           <p>
             <button
