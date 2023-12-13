@@ -20,14 +20,10 @@
         <h1>{{ product.name }}</h1>
         <div class="mt-5">
           <span class="heading">User Rating&nbsp;&nbsp;&nbsp;</span>
-          userRatingStars
-          <p>
-            selectedProduct.rating ' average based on selectedProduct.reviews +
-            ' reviews.
-          </p>
+          <stars :rate="95" :totalReviews="345"/>
           <hr style="border: 3px solid #f1f1f1" />
         </div>
-        <div class="mb-5 detailPrice">Price: &nbsp;€ {{ product.price }},00</div>
+        <div class="mb-5 detailPrice">Price: &nbsp;€ {{ product.price }}.00</div>
         <p>
           <button
             id="myBtn"
@@ -48,15 +44,15 @@
       <div class="col-lg-6 mt-4">
         <h5><strong>Features:</strong></h5>
         <ul>
-          <li>Available in weights 1-70kg</li>
-          <li>Reliable</li>
-          <li>Comfortable hold</li>
-          <li>Chrome handle with knurling</li>
-          <li>Reduced impact and noise</li>
-          <li>Variety of exercises</li>
-          <li>Anti-roll design</li>
-          <li>Suitable for home and commercial gyms</li>
-          <li>Single arm rows</li>
+          <li>All varieties of Roses are edible!</li>
+          <li>Red roses – love and passion</li>
+          <li>White roses - innocence and spirituality</li>
+          <li>Yellow roses – warmth, friendship, and joy</li>
+          <li>Pink roses – gratitude, elegance, and sweetness</li>
+          <li>Orange roses – pride, energy, and intense desire</li>
+          <li>Blue roses – secret love, mystery, and uniqueness</li>
+          <li>Lavender roses – love at first sight, wonder, and enchantment</li>
+          <li>Black roses – end of a relationship, change, and courage</li>
         </ul>
       </div>
     </div>
@@ -65,9 +61,13 @@
   
   <script>
   import { mapActions } from "vuex";
+  import stars from "~/components/ratingStars";
 export default {
   layout: "productDetailLayout",
   name: "productDetailPage",
+  components: {
+    stars,
+  },
   data: () => ({
     product: {},
   }),
