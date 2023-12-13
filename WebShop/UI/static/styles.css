@@ -1,6 +1,7 @@
 .productCard {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    width: 95%;
     max-height: 600px;
     margin: 5px;
     text-align: center;
@@ -131,6 +132,13 @@
 
 .cartIcon {
     color: black;
+    font-size: 34px;
+
+}
+.userIcon {
+    color: black;
+    font-size: 34px;
+
 
 }
 
