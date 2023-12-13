@@ -27,36 +27,31 @@
       <div class="col-8 d-none d-lg-block mt-2">
         <!-- This menu is not dynamic, when clicked it goes to the home page. Display is none on mobile screen -->
         <div class="topnav">
-          <nuxt-link to="./"> Home </nuxt-link>
-          <nuxt-link to="./"> Flowers </nuxt-link>
-          <nuxt-link to="./"> Christmas </nuxt-link>
-          <nuxt-link to="./"> Events </nuxt-link>
+          <nuxt-link :to="{ path: './', query: { category: 'all' }}"> Home </nuxt-link>
+          <nuxt-link :to="{ path: './', query: { category: 'flowers' }}"> Flowers </nuxt-link>
+          <nuxt-link :to="{ path: './', query: { category: 'christmas' }}"> Christmas </nuxt-link>
+          <nuxt-link :to="{ path: './', query: { category: 'event' }}"> Events </nuxt-link>
 
           <input
             class="search"
             type="text"
             placeholder="Search.."
-            onkeyup="productSearch()"
+            v-model="search"
           />
         </div>
       </div>
       <div class="col-2 text-end mt-3">
-        <h3>
-          <i @click="openLoginForm" class="bi bi-person userIcon ml-2 pt-1">
+        <h3>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <i @click="openLoginForm" class="bi bi-person userIcon ml-2 pt-1">
             </i>
           <i @click="openCart" class="bi bi-cart cartIcon">
             <span class="btn-circle" v-if="hasProduct()">
               {{ getProductsInCart.length }}
             </span></i>
         </h3>
-        
       </div>
     </div>
     <v-main>
-    
-       
         <Nuxt />
-     
     </v-main>
     <footer class="footer">
       <a class="logoFooter" href="./">
@@ -85,8 +80,18 @@ export default {
       cartKey: "ky",
       formKey: "ky",
       cartDialog: false,
-      loginFormDialog:false
+      loginFormDialog:false,
+      search:""
     };
+  }, 
+  watch: {
+    'search'() {
+        if(this.search.length){
+          this.$router.push({path: './', query: { search: this.search }})
+        }
+      
+        
+    }
   },
   methods: {
     ...mapActions(["setAuth"]),
