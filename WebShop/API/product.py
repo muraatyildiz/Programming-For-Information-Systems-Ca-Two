@@ -36,7 +36,7 @@ def test(): # Name of the method
  return("Hello World!<BR/>THIS IS ANOTHER TEST!") 
 
 @product_api.route("/yest")#URL leading to method
-def test(): # Name of the method
+def yest(): # Name of the method
  return("Hello World!<BR/>THIS IS YET ANOTHER TEST!") 
 
 @product_api.route("/add", methods=['GET', 'POST']) #Add product
