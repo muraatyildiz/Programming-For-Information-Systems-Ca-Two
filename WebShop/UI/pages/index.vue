@@ -1,14 +1,14 @@
 <template>
   <div class="container text-center">
     <div
-      class="row content row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 p-2"
+      class="row content"
     >
       <div
-        class="productCard col mb-3"
+        class="productCard col-md-3 mb-3 p-5"
         v-for="product in products"
         :key="product.id"
       >
-        <div>
+        <div class="">
           <nuxt-link :to="{ name: 'id', params: { id: product.id } }">
             <img
               :src="$store.state.ApiLink + 'file/serve-image/' + product.imgUrl"
@@ -32,6 +32,8 @@
           </p>
         </div>
       </div>
+  
+      
     </div>
   </div>
 </template>
