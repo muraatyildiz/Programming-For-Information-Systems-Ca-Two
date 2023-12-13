@@ -294,18 +294,6 @@ export default {
     },
     onBeforeDelete: function (fileRecord) {
       var i = this.fileRecordsForUpload.indexOf(fileRecord);
-
-      // if (i !== -1) {
-      //   this.fileRecordsForUpload.splice(i, 1);
-      //   var k = this.fileRecords.indexOf(fileRecord);
-      //   if (k !== -1) this.fileRecords.splice(k, 1);
-      // } else {
-      //   var ths = this;
-
-      //   if (confirm("Resmi Silmek İstediğinize Emin misiniz?")) {
-      //     ths.$refs.vueFileAgent.deleteFileRecord(fileRecord);
-      //   }
-      // }
     },
   },
 };

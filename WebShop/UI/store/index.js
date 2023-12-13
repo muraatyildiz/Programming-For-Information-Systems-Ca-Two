@@ -1,20 +1,26 @@
 import Vue from "vue";
+import Cookie from "js-cookie";
 
 export const state = () => ({
 	ApiLink2: process.env.NODE_ENV === "development" ? "http://10.69.174.136:8080/" : "/",
 	ApiLink: process.env.NODE_ENV === "development" ? "http://192.168.0.63:8080/" : "/",
-	userInfo: null,
+	auth:false,
+	userInfo: {},
 	cartProducts: []
 });
 
 export const mutations = {
-	setUserInfo(state, user) {
+	setUserInfo(state, user) {	
 		if (user) {
 			state.userInfo = user;
+			state.auth=true;				
 		}
 		else {
 			state.userInfo = null;
 		}
+	},
+	setAuth(state, auth){
+        state.auth =auth
 	},
 	addProductToCart(state, product) {
 		if (state.cartProducts.includes(product)) {
@@ -53,6 +59,24 @@ export const actions = {
 		return Vue.http.delete(link).catch((r) => {
 		});
 	},
+	setUserInfo(vuexContext,user){
+        vuexContext.commit("setUserInfo", user)
+		Cookie.set("authKey", true);
+	},
+	setAuth(vuexContext,auth){
+		let cookieAuth=Cookie.get("authKey");
+		console.log(cookieAuth)
+		if(cookieAuth){
+			vuexContext.commit("setAuth", cookieAuth)
+		}else{
+			vuexContext.commit("setAuth", auth)
+		}
+		
+	},
+	logout(vuexContext){
+		vuexContext.commit("setAuth", false)
+		Cookie.set("authKey", false);
+	},
 	addProductToCart(vuexContext, product) {
 		vuexContext.commit("addProductToCart", product)
 	},
@@ -67,6 +91,9 @@ export const getters = {
 			return state.userInfo;
 		}
 		return null;
+	},
+	isAuthenticated(state) {		
+		return state.auth;
 	},
 	getProductsInCart(state) {
 		return state.cartProducts;
