@@ -18,10 +18,10 @@
         <div class="col-8 d-none d-lg-block mt-2">
           <!-- This menu is not dynamic, when clicked it goes to the home page. Display is none on mobile screen -->
           <div class="topnav">
-            <nuxt-link to="./"> Home </nuxt-link>
-          <nuxt-link to="./"> Flowers </nuxt-link>
-          <nuxt-link to="./"> Christmas </nuxt-link>
-          <nuxt-link to="./"> Events </nuxt-link>
+            <nuxt-link :to="{ path: './', query: { category: 'all' }}"> Home </nuxt-link>
+          <nuxt-link :to="{ path: './', query: { category: 'flowers' }}"> Flowers </nuxt-link>
+          <nuxt-link :to="{ path: './', query: { category: 'christmas' }}"> Christmas </nuxt-link>
+          <nuxt-link :to="{ path: './', query: { category: 'event' }}"> Events </nuxt-link>
             <input
               class="search"
               type="text"
