@@ -1,7 +1,7 @@
 # Programming-For-Information-Systems-Ca-Two
 Online Flower Shop
 Frontend -> VueJs(nuxt)
--cd WebShopApi
+-cd WebShopUi
 -npm install
 -npm run dev
 
@@ -14,5 +14,5 @@ cd WebShopApi
 -pip install -U Flask-SQLAlchemy
 pip3 install flask_cors mysql-connector-python
 -pip install sshtunnel
--pyhton3 api.py
+-python3 api.py
 Database -> MsSql

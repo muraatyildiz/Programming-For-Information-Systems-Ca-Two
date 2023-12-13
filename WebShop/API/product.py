@@ -78,7 +78,7 @@ def update():
     return render_template('add.html')
   return '{"Result":"Success"}'
 @product_api.route("/list") #Default - Show Data
-def hello(): # Name of the method
+def sendList(): # Name of the method
   cur = mysql.cursor() #create a connection to the SQL instance
   cur.execute('''SELECT * FROM Product''') # execute an SQL statment
   rv = cur.fetchall() #Retreive all rows returend by the SQL statment
@@ -99,7 +99,57 @@ def hello(): # Name of the method
     status=200,
     mimetype='application/json'
   )
-  return ret #Return the data in a string format
+  return ret 
+
+@product_api.route("/getByCategory/<string:category>")
+def getListCategory(category):
+ 
+  cur = mysql.cursor() 
+  cur.execute("SELECT * FROM Product WHERE Category = '{}';".format(category)) # execute an SQL statment
+  
+  rv = cur.fetchall() 
+  Results=[]
+  for row in rv:
+    Result={}
+    Result['id']=row[0]
+    Result['name']=row[1]
+    Result['category']=row[2]
+    Result['stock']=row[3]
+    Result['price']=row[4]
+    Result['imgUrl']=row[5]
+    Result['description']=row[6]
+    Results.append(Result)
+  response={'Results':Results, 'count':len(Results)}
+  ret=product.response_class(
+    response=json.dumps(response),
+    status=200,
+    mimetype='application/json'
+  )
+  return ret 
+@product_api.route("/getBySearch/<string:search>")
+def getListSearch(search):
+  cur = mysql.cursor()
+  cur.execute("SELECT * FROM Product WHERE Name LIKE '%{}%';".format(search))   
+  rv = cur.fetchall() 
+  Results=[]
+  for row in rv: 
+    Result={}
+    Result['id']=row[0]
+    Result['name']=row[1]
+    Result['category']=row[2]
+    Result['stock']=row[3]
+    Result['price']=row[4]
+    Result['imgUrl']=row[5]
+    Result['description']=row[6]
+    Results.append(Result)
+  response={'Results':Results, 'count':len(Results)}
+  ret=product.response_class(
+    response=json.dumps(response),
+    status=200,
+    mimetype='application/json'
+  )
+  return ret
+
 @product_api.route('/delete/<int:item_id>', methods=['DELETE'])
 def delete_items(item_id):
  try:
