@@ -64,30 +64,30 @@
         fixed: false,
         items: [
           {
-            icon: 'mdi-apps',
-            title: 'Welcome',
+            icon: 'mdi-account',
+            title: 'Users',
             to: '/admin'
           },
           {
-            icon: 'mdi-chart-bubble',
+            icon: 'mdi-truck',
             title: 'Orders',
             to: '/admin/orderList'
           },
           {
-            icon: 'mdi-chart-bubble',
+            icon: 'mdi-sprout',
             title: 'Products',
             to: '/admin/productList'
           },
-          {
-            icon: 'mdi-chart-bubble',
-            title: 'Offers',
-            to: '/admin/offers'
-          },
-          {
-            icon: 'mdi-chart-bubble',
-            title: 'Reviews',
-            to: '/admin/reviews'
-          }
+          // {
+          //   icon: 'mdi-chart-bubble',
+          //   title: 'Offers',
+          //   to: '/admin/offers'
+          // },
+          // {
+          //   icon: 'mdi-chart-bubble',
+          //   title: 'Reviews',
+          //   to: '/admin/reviews'
+          // }
         ],
         miniVariant: false,
         right: true,
