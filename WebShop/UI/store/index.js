@@ -2,8 +2,8 @@ import Vue from "vue";
 import Cookie from "js-cookie";
 
 export const state = () => ({
-	ApiLink2: process.env.NODE_ENV === "development" ? "http://10.69.174.136:8080/" : "/",
-	ApiLink: process.env.NODE_ENV === "development" ? "http://192.168.0.63:8080/" : "/",
+	ApiLink: process.env.NODE_ENV === "development" ? "http://10.69.165.228:8080/" : "/",
+	ApiLink2: process.env.NODE_ENV === "development" ? "http://192.168.0.63:8080/" : "/",
 	auth:false,
 	userInfo: {},
 	cartProducts: []
