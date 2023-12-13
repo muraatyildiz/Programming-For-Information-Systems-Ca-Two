@@ -41,7 +41,7 @@ export default {
     },
     totalPrice() {
       return this.getProductsInCart.reduce(
-        (current, next) => current + (next.price*next.amount),
+        (current, next) => current + (next.price*next.quantity),
         0
       );
     },
