@@ -42,56 +42,75 @@
       </div>
       <div class="col-2 text-end mt-3">
         <h3>
+          <i @click="openLoginForm" class="bi bi-person userIcon ml-2 pt-1">
+            </i>
           <i @click="openCart" class="bi bi-cart cartIcon">
             <span class="btn-circle" v-if="hasProduct()">
               {{ getProductsInCart.length }}
-            </span></i
-          >
+            </span></i>
         </h3>
+        
       </div>
     </div>
     <v-main>
-      <v-container>
-        <v-dialog v-model="dialog" width="auto">
-      <cart :key="cartKey" @closeForm="dialog = false" />
-    </v-dialog>
+    
+       
         <Nuxt />
-      </v-container>
+     
     </v-main>
     <footer class="footer">
       <a class="logoFooter" href="./">
         <img style="width: 100%; height: 100%" src="new_logo_BA.png" />
       </a>
     </footer>
-   
+    <v-dialog v-model="cartDialog" width="auto">
+      <cart :key="cartKey" @closeForm="cartDialog = false" />
+    </v-dialog>
+    <v-dialog v-model="loginFormDialog" width="auto">
+      <login-form :key="formKey" @closeForm="loginFormDialog = false" />
+    </v-dialog>
   </v-app>
 </template>
 
 <script>
 import cart from "~/components/cartDialog";
+import loginForm from "~/components/loginForm";
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "DefaultLayout",
-  components: { cart },
+  components: { cart,
+    loginForm },
   data() {
     return {
-      dialog: false,
-      cartKey:"ky"
+      cartKey: "ky",
+      formKey: "ky",
+      cartDialog: false,
+      loginFormDialog:false
     };
   },
   methods: {
+    ...mapActions(["setAuth"]),
     hasProduct() {
       return this.getProductsInCart.length > 0;
     },
     openCart() {
       this.cartKey = new Date().getTime();
-      this.dialog = true;
-   
+      this.cartDialog = true;
     },
+    openLoginForm(){    
+      this.formKey = new Date().getTime();
+      this.loginFormDialog = true;
+    }
+  
   },
   computed: {
     ...mapGetters(["getProductsInCart"]),
   },
+  created(){
+    let auth = false
+    this.setAuth(auth);
+    
+  }
 };
 </script>
 <style scoped>
