@@ -36,22 +36,20 @@ def test(): # Name of the method
  return("Hello World!<BR/>THIS IS ANOTHER TEST!") 
 
 @product_api.route("/yest")#URL leading to method
-def yest(): # Name of the method
+def test(): # Name of the method
  return("Hello World!<BR/>THIS IS YET ANOTHER TEST!") 
 
 @product_api.route("/add", methods=['GET', 'POST']) #Add product
 def add():
   if request.method == 'POST':
-    print("here",request.form)
     name = request.form['name']
     category = request.form['category']
     price = request.form['price']
     stock = request.form['stock']
     imgUrl = request.form['imgUrl']
-    description = request.form['description']
-    
+    description = request.form['description'] 
     cur = mysql.cursor() #create a connection to the SQL instance
-    s='''INSERT INTO Product7 (Name, Category,Price,Stock,ImgURL,Description) VALUES('{}','{}','{}','{}','{}','{}');'''.format(name,category,price,stock,imgUrl,description)
+    s='''INSERT INTO Product (Name, Category,Price,Stock,ImgURL,Description) VALUES('{}','{}','{}','{}','{}','{}');'''.format(name,category,price,stock,imgUrl,description)
     print(s)
     product.logger.info(s)
     cur.execute(s)
@@ -71,7 +69,7 @@ def update():
     imgUrl = request.form['imgUrl']
     description = request.form['description']
     cur = mysql.cursor() #create a connection to the SQL instance
-    s='''UPDATE Product7 SET Name ='{}' , Category='{}',Price='{}',Stock='{}',ImgURL='{}',Description='{}'  WHERE Product_ID ='{}';'''.format(name,category,price,stock,imgUrl,description,id)
+    s='''UPDATE Product SET Name ='{}' , Category='{}',Price='{}',Stock='{}',ImgURL='{}',Description='{}'  WHERE Product_ID ='{}';'''.format(name,category,price,stock,imgUrl,description,id)
     print(s)
     product.logger.info(s)
     cur.execute(s)
@@ -82,7 +80,7 @@ def update():
 @product_api.route("/list") #Default - Show Data
 def hello(): # Name of the method
   cur = mysql.cursor() #create a connection to the SQL instance
-  cur.execute('''SELECT * FROM Product7''') # execute an SQL statment
+  cur.execute('''SELECT * FROM Product''') # execute an SQL statment
   rv = cur.fetchall() #Retreive all rows returend by the SQL statment
   Results=[]
   for row in rv: #Format the Output Results and add to return string
@@ -106,7 +104,7 @@ def hello(): # Name of the method
 def delete_items(item_id):
  try:
         cur = mysql.cursor()
-        cur.execute('DELETE FROM Product7 WHERE Product_ID = %s', (item_id,))
+        cur.execute('DELETE FROM Product WHERE Product_ID = %s', (item_id,))
         mysql.commit()
         cur.close()       
         
