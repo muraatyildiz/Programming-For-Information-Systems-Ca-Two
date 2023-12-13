@@ -4,7 +4,7 @@
   <v-data-table
     :headers="headers"
     :items="products"
-    sort-by="calories"
+    sort-by="name"
     class="elevation-1"
   >
     <template v-slot:top>
@@ -44,7 +44,7 @@
                     <v-select
                       v-model="product.category"
                       label="Category"
-                      :items="['general', 'seasonal', 'event']"
+                      :items="['flowers', 'christmas', 'event']"
                     ></v-select>
                   </v-col>
                   <v-col cols="12" sm="12" md="6">
