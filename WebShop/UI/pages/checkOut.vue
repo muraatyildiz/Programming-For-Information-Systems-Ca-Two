@@ -161,15 +161,15 @@ export default {
   data() {
     return {
       order: {
-        customerFullName: "",
-        customerEmail: "",
-        customerPhoneNumber: "",
+        customerFullName: "Murat Yildiz",
+        customerEmail: "murat@dbs.ie",
+        customerPhoneNumber: "0588556256",
         paymentDone: false,
-        shippingName: "",
-        shippingAddress: "",
-        shippingPhoneNumber: "",
-        shippingDate: "",
-        shippingCardMessage: "",
+        shippingName: "Paul Laird",
+        shippingAddress: "13/14 Aungier Street Dublin 2, D02 WC04,  Ireland.",
+        shippingPhoneNumber: "084085261996",
+        shippingDate: "2023-12-24",
+        shippingCardMessage: "Hope you have a good Christmas with your family. Happy christmas. Irene, Jeevitha and Murat",
         orderDate: new Date().toISOString().slice(0, 10),
         totalPrice: "",
         products: [],
@@ -214,6 +214,7 @@ export default {
         var answer = response.body;
         if (answer.Result == "Success") {
           this.$router.push("./");
+          alert("Order created successfully")
         } else {
         }
       });
